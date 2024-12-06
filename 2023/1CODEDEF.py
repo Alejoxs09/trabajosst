@@ -75,7 +75,7 @@ def exportar_a_excel_resultados(resultados, archivo_excel="coberturavicente.xlsx
 
 # Parámetros
 
-imagen_path = "2023/coberturavicente.JPG"  # Reemplazar con tu imagen
+imagen_path = "2023/coberturagerman.jpg"  # Reemplazar con tu imagen
 num_filas = 30
 num_columnas = 15
 

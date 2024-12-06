@@ -85,7 +85,7 @@ def analizar_cuadriculas_vial_gris(imagen, num_filas, num_columnas, umbral_longi
 
     return matriz_resultados
 
-def exportar_a_excel(matriz_resultados, archivo_excel="resultados_vial_gris.xlsx"):
+def exportar_a_excel(matriz_resultados, archivo_excel="resultados_vial_german.xlsx"):
     """
     Exporta los resultados de la matriz a un archivo Excel.
     """
@@ -104,9 +104,9 @@ def exportar_a_excel(matriz_resultados, archivo_excel="resultados_vial_gris.xlsx
     print(f"Resultados exportados con éxito a {archivo_excel}.")
 
 # Parámetros
-imagen_path = "2023/coberturavicente.jpg"  # Cambia esto por el path de tu imagen
-num_filas = 30
-num_columnas = 15
+imagen_path = "2023/coberturagerman.jpg"  # Cambia esto por el path de tu imagen
+num_filas = 18
+num_columnas = 25
 umbral_longitud = 50  # Ajusta este valor según la longitud mínima para considerar cobertura
 
 # Cargar la imagen
@@ -118,4 +118,4 @@ else:
     resultados_vial_gris = analizar_cuadriculas_vial_gris(imagen, num_filas, num_columnas, umbral_longitud, diagnostico=True)
 
     # Exportar resultados a Excel
-    exportar_a_excel(resultados_vial_gris, "resultados_vial_gris.xlsx")
+    exportar_a_excel(resultados_vial_gris, "resultados_vial_german.xlsx")
