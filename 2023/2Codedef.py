@@ -23,6 +23,7 @@ def calcular_cobertura_por_cuadrante(mascara, umbral_porcentaje):
             return 100
     else:
         return 0
+        
 
 def analizar_cuadriculas(imagen, num_filas, num_columnas, tipo="vegetal"):
     """
@@ -69,7 +70,7 @@ def analizar_cuadriculas(imagen, num_filas, num_columnas, tipo="vegetal"):
 
     return matriz_resultados
 
-def exportar_a_excel_resultados(resultados, archivo_excel="resultadosgerman.xlsx"):
+def exportar_a_excel_resultados(resultados, archivo_excel="resultadosney.xlsx"):
     """
     Exporta los resultados a diferentes hojas de un archivo Excel como porcentaje en formato numérico.
     """
@@ -95,7 +96,7 @@ def exportar_a_excel_resultados(resultados, archivo_excel="resultadosgerman.xlsx
     print(f"Resultados exportados a {archivo_excel} con formato de porcentaje.")
 
 # Parámetros
-imagen_path = "2023/coberturagerman.JPG"  # Reemplazar con tu imagen
+imagen_path = "2023/coberturaney.JPG"  # Reemplazar con tu imagen
 num_filas = 18  # Número de filas para cuadrículas
 num_columnas = 25  # Número de columnas para cuadrículas
 

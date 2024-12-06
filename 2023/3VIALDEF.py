@@ -68,7 +68,7 @@ def analizar_cuadriculas_vial_gris(imagen, num_filas, num_columnas, umbral_longi
     print("Imagen final con carreteras grises detectadas guardada como 'lineas_detectadas_gris.jpg'.")
     return matriz_resultados
 
-def exportar_a_excel_resultados(resultados, archivo_excel="resultadosgerman.xlsx"):
+def exportar_a_excel_resultados(resultados, archivo_excel="resultadosvialney.xlsx"):
     """
     Exporta los resultados a diferentes hojas de un archivo Excel como porcentaje en formato numérico.
     """
@@ -91,7 +91,7 @@ def exportar_a_excel_resultados(resultados, archivo_excel="resultadosgerman.xlsx
     print(f"Resultados exportados a {archivo_excel} con formato de porcentaje.")
 
 # Parámetros
-imagen_path = "2023/coberturagerman.JPG"  # Cambiar por la ruta de tu imagen
+imagen_path = "2023/coberturaney.JPG"  # Cambiar por la ruta de tu imagen
 num_filas = 18
 num_columnas = 25
 umbral_longitud = 50  # Ajustar según la longitud mínima para considerar cobertura
@@ -104,4 +104,4 @@ else:
     resultados_vial_gris = analizar_cuadriculas_vial_gris(imagen, num_filas, num_columnas, umbral_longitud, diagnostico=True)
 
     resultados = {"vial_gris": resultados_vial_gris}
-    exportar_a_excel_resultados(resultados, "resultados_vial_german.xlsx")
+    exportar_a_excel_resultados(resultados, "resultados_vial_ney.xlsx")
