@@ -49,12 +49,12 @@ def analizar_cuadriculas(imagen, num_filas, num_columnas, tipo="vegetal"):
                 verde_bajo = np.array([30, 20, 20])
                 verde_alto = np.array([90, 255, 255])
                 mascara = cv2.inRange(hsv, verde_bajo, verde_alto)
-                umbral = 30  # Ajustar umbral para vegetación
+                umbral = 10  # Ajustar umbral para vegetación
             elif tipo == "urbanistico":
                 # Análisis de cobertura urbanística
                 gris = cv2.cvtColor(cuadricula, cv2.COLOR_BGR2GRAY)
                 _, mascara = cv2.threshold(gris, 100, 255, cv2.THRESH_BINARY)
-                umbral = 30  # Ajustar umbral para áreas urbanas
+                umbral = 25  # Ajustar umbral para áreas urbanas
             elif tipo == "vial":
                 # Análisis de cobertura vial
                 gris = cv2.cvtColor(cuadricula, cv2.COLOR_BGR2GRAY)
@@ -70,7 +70,7 @@ def analizar_cuadriculas(imagen, num_filas, num_columnas, tipo="vegetal"):
 
     return matriz_resultados
 
-def exportar_a_excel_resultados(resultados, archivo_excel="coberturaAlejo.xlsx"):
+def exportar_a_excel_resultados(resultados, archivo_excel="coberturaana1.xlsx"):
     """
     Exporta los resultados a diferentes hojas de un archivo Excel como porcentaje en formato numérico.
     """
@@ -96,7 +96,7 @@ def exportar_a_excel_resultados(resultados, archivo_excel="coberturaAlejo.xlsx")
     print(f"Resultados exportados a {archivo_excel} con formato de porcentaje.")
 
 # Parámetros
-imagen_path = "2023/coberturaalejo2023.png"  # Reemplazar con tu imagen
+imagen_path = "2023/Coberturaana.png"  # Reemplazar con tu imagen
 num_filas = 18  # Número de filas para cuadrículas
 num_columnas = 25  # Número de columnas para cuadrículas
 
@@ -206,7 +206,7 @@ def exportar_a_excel_resultados(resultados, archivo_excel="resultadosvialalejo.x
     print(f"Resultados exportados a {archivo_excel} con formato de porcentaje.")
 
 # Parámetros
-imagen_path = "2023/coberturaalejo2023.png"  # Cambiar por la ruta de tu imagen
+imagen_path = "2023/Coberturaana.png"  # Cambiar por la ruta de tu imagen
 num_filas = 18
 num_columnas = 25
 umbral_longitud = 50  # Ajustar según la longitud mínima para considerar cobertura
@@ -219,5 +219,5 @@ else:
     resultados_vial_gris = analizar_cuadriculas_vial_gris(imagen, num_filas, num_columnas, umbral_longitud, diagnostico=True)
 
     resultados = {"vial_gris": resultados_vial_gris}
-    exportar_a_excel_resultados(resultados, "resultados_vial_Alejo.xlsx")
+    exportar_a_excel_resultados(resultados, "resultados_vial_ana.xlsx")
 

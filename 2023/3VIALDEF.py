@@ -7,8 +7,8 @@ def calcular_cobertura_vial_gris(cuadricula, umbral_longitud, diagnostico=False,
     Calcula la cobertura vial en una cuadrícula detectando áreas grises y contornos.
     """
     hsv = cv2.cvtColor(cuadricula, cv2.COLOR_BGR2HSV)
-    gris_bajo = np.array([0, 0, 85])  # Tonos oscuros de gris
-    gris_alto = np.array([180, 30, 250])  # Tonos claros de gris
+    gris_bajo = np.array([0, 0, 80])  # Tonos oscuros de gris
+    gris_alto = np.array([180, 50, 250])  # Tonos claros de gris
     mascara_gris = cv2.inRange(hsv, gris_bajo, gris_alto)
 
     bordes = cv2.Canny(mascara_gris, 50, 150)
@@ -91,7 +91,7 @@ def exportar_a_excel_resultados(resultados, archivo_excel="resultadosvialney.xls
     print(f"Resultados exportados a {archivo_excel} con formato de porcentaje.")
 
 # Parámetros
-imagen_path = "2023/coberturaney.JPG"  # Cambiar por la ruta de tu imagen
+imagen_path = "2023/Coberturaana.PNG"  # Cambiar por la ruta de tu imagen
 num_filas = 18
 num_columnas = 25
 umbral_longitud = 50  # Ajustar según la longitud mínima para considerar cobertura
@@ -104,4 +104,4 @@ else:
     resultados_vial_gris = analizar_cuadriculas_vial_gris(imagen, num_filas, num_columnas, umbral_longitud, diagnostico=True)
 
     resultados = {"vial_gris": resultados_vial_gris}
-    exportar_a_excel_resultados(resultados, "resultados_vial_ney.xlsx")
+    exportar_a_excel_resultados(resultados, "resultados_vial_ana.xlsx")
